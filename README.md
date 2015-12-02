@@ -3,7 +3,7 @@
 
 #### 如何将插件安装到elasticsearch
 
-```
+```java
   打包
   $ mvn clean package
   安装插件
@@ -15,7 +15,7 @@
 
 #### 验证
 
-```
+```java
   添加索引
   curl -XPOST 'localhost:9200/test/'
   使用插件
