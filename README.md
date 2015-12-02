@@ -3,7 +3,7 @@
 
 #### 如何将插件安装到elasticsearch
 
-```java
+```
   打包
   $ mvn clean package
   安装插件
