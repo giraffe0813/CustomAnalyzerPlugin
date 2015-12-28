@@ -1,5 +1,5 @@
 # CustomAnalyzerPlugin
-按照书“Master Elasticsearch”第九章第三节写的自定义es分词器插件,实现按空格分词后将词反转。代码基本上都是照着书上写的，但应为es版本不同有一点点改动。es版本采用2.1.0
+按照书“Master Elasticsearch”第九章第三节写的自定义es分词器插件,实现按空格分词后将词反转。代码基本上都是照着书上写的，但因为es版本不同有一点点改动。es版本采用2.1.0
 
 #### 如何将插件安装到elasticsearch
 
