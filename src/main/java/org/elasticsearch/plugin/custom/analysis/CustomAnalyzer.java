@@ -18,11 +18,11 @@ public class CustomAnalyzer extends Analyzer {
         this.version = version;
     }
 
-
     @Override
-    protected TokenStreamComponents createComponents(String s, Reader reader) {
-        final Tokenizer src = new WhitespaceTokenizer(this.version,
-                reader);
+    protected TokenStreamComponents createComponents(String s) {
+        final Tokenizer src = new WhitespaceTokenizer();
         return new TokenStreamComponents(src, new CustomFilter(src));
     }
+
+
 }

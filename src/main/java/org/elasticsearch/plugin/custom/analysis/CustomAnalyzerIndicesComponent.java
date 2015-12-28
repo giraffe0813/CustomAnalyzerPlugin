@@ -20,17 +20,17 @@ public class CustomAnalyzerIndicesComponent extends AbstractComponent {
         super(settings);
         indicesAnalysisService.analyzerProviderFactories().put(
                 "custom_analyzer",
-                new PreBuiltAnalyzerProviderFactory("custom_analyzer",
+                new PreBuiltAnalyzerProviderFactory("custom-analysis",
                         AnalyzerScope.INDICES, new CustomAnalyzer(
                         Lucene.ANALYZER_VERSION)));
 
 
-        indicesAnalysisService.tokenFilterFactories().put("custom_filter",
+        indicesAnalysisService.tokenFilterFactories().put("custom-filter",
             new PreBuiltTokenFilterFactoryFactory(new TokenFilterFactory() {
 
 
                 public String name() {
-                    return "custom_filter";
+                    return "custom-filter";
                 }
 
                 public TokenStream create(TokenStream tokenStream) {

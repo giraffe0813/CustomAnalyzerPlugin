@@ -1,22 +1,22 @@
 package org.elasticsearch.plugin.custom;
 
-import org.elasticsearch.common.collect.ImmutableList;
 import org.elasticsearch.common.inject.Module;
 import org.elasticsearch.index.analysis.AnalysisModule;
 import org.elasticsearch.plugin.custom.analysis.CustomAnalysisBinderProcessor;
 import org.elasticsearch.plugin.custom.analysis.CustomAnalyzerModule;
-import org.elasticsearch.plugins.AbstractPlugin;
+import org.elasticsearch.plugins.Plugin;
 
 import java.util.Collection;
+import java.util.Collections;
 
 
 /**
  * Created by yemengying on 15/12/2.
  */
-public class CustomAnalysisPlugin extends AbstractPlugin {
+public class CustomAnalysisPlugin extends Plugin {
 
     public String name() {
-        return "custom-analysis-plugin";
+        return "custom-analysis";
     }
 
     public String description() {
@@ -24,9 +24,8 @@ public class CustomAnalysisPlugin extends AbstractPlugin {
     }
 
     @Override
-    public Collection<Class<? extends Module>> modules() {
-        return ImmutableList.<Class<? extends
-                Module>>of(CustomAnalyzerModule.class);
+    public Collection<Module> nodeModules() {
+        return Collections.<Module>singletonList(new CustomAnalyzerModule());
     }
     public void onModule(AnalysisModule module) {
         module.addProcessor(new CustomAnalysisBinderProcessor());

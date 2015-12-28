@@ -14,7 +14,7 @@ public class CustomAnalysisBinderProcessor extends AnalysisModule.AnalysisBinder
     @Override
     public void processAnalyzers(AnalyzersBindings
                                          analyzersBindings) {
-        analyzersBindings.processAnalyzer("custom_analyzer",
+        analyzersBindings.processAnalyzer("custom-analysis",
                 CustomAnalyzerProvider.class);
     }
 
@@ -22,7 +22,7 @@ public class CustomAnalysisBinderProcessor extends AnalysisModule.AnalysisBinder
     @Override
     public void processTokenFilters(TokenFiltersBindings
                                             tokenFiltersBindings) {
-        tokenFiltersBindings.processTokenFilter("custom_filter",
+        tokenFiltersBindings.processTokenFilter("custom-filter",
                 CustomFilterFactory.class);
     }
 }
